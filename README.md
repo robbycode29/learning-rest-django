@@ -22,11 +22,11 @@ To log in and out go to:
 
 The api has endpoints for the following tables in the db: 
 
-  1. books:        localhost:8000/api/books
+  1. books:        localhost:8000/api/books ,
                    localhost:8000/api/books/<int:pk>
                
-  2. authors:      localhost:8000/api/authors
+  2. authors:      localhost:8000/api/authors ,
                    localhost:8000/api/authors/<int:pk>
                
-  3. publishers:   localhost:8000/api/publishers
+  3. publishers:   localhost:8000/api/publishers ,
                    localhost:8000/api/publishers/<int:pk>
