@@ -17,7 +17,7 @@ Only logged in users can modify data in the db (read only for logged out users *
 
 To log in and out go to:
 
-  localhost:8000/accounts/login
+  localhost:8000/accounts/login ,
   localhost:8000/accounts/logout
 
 The api has endpoints for the following tables in the db: 
