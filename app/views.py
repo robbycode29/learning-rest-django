@@ -64,16 +64,19 @@ class AuthorSerializer(serializers.ModelSerializer):
         model = Author
         fields = ('id', 'first_name', 'last_name', 'email')
 
-class BookSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Book
-        fields = ('id', 'title', 'authors', 'publisher', 'publication_date')
-        depth = 1
-
 class PublisherSerializer(serializers.ModelSerializer):
     class Meta:
         model = Publisher
         fields = ('id', 'name', 'address', 'city', 'state_province', 'country', 'website')
+
+class BookSerializer(serializers.ModelSerializer):
+    authors = serializers.PrimaryKeyRelatedField(many=True, read_only=False, queryset=Author.objects.all())
+    publisher = serializers.PrimaryKeyRelatedField(many=False, read_only=False, queryset=Publisher.objects.all())
+
+    class Meta:
+        model = Book
+        depth = 1
+        fields = ('id', 'title', 'authors', 'publisher', 'publication_date')
 
 
 # view sets
